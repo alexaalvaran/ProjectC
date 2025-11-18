@@ -1,0 +1,18 @@
+# Ignore Visual Studio cache
+.vs/
+
+# Ignore Node + Next.js
+node_modules/
+.next/
+dist/
+build/
+
+# Ignore environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignore OS/platform files
+.DS_Store
+Thumbs.db
