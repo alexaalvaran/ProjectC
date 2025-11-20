@@ -65,7 +65,7 @@ export default function Notes() {
         setFormTitle(note.title);
         setFormDescription(note.description);
         setSelectedNote(note);
-    }
+    };
 
     const deleteNoteClick = async (id: number) => {
         await deleteNote(id);
@@ -73,7 +73,19 @@ export default function Notes() {
 
         const data = await getNotes();
         setNotes(data);
-    } 
+    };
+
+    const onExit = async () => {
+        setAddNoteMode(false);
+        setEditMode(false);
+        setSelectedNote(null);
+        setFormTitle('');
+        setFormDescription('');
+
+        const data = await getNotes();
+        setNotes(data);
+    }
+
     return (
         <div className="flex min-h-screen font-mono-roboto font-bold bg-amber-50">
             <main className="flex w-full flex-col items-center justify-center py-10 px-10 gap-5">
@@ -111,7 +123,7 @@ export default function Notes() {
                         <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
                             <div className="bg-amber-50 rounded-lg shadow-lg max-w-lg p-6 w-full relative size-max">
                                 <button
-                                    onClick={() => setSelectedNote(null)}
+                                    onClick={() => onExit()}
                                     className="absolute top-2 right-5 text-zinc-500 hover:text-zinc-600 text-1xl font-extrabold"
                                 >
                                     X
@@ -155,7 +167,7 @@ export default function Notes() {
                     <div className="fixed inset-0 bg-zinc-100 bg-opacity-5 flex items-center justify-center">
                         <div className="bg-amber-50 p-6 rounded-lg shadow-lg max-w-md w-full relative">
                             <button
-                                onClick={() => setAddNoteMode(false)}
+                                onClick={() => onExit()}
                                 className="absolute top-2 right-5 text-zinc-500 hover:text-zinc-600 text-1xl font-extrabold"
                             >
                                 X
@@ -197,7 +209,7 @@ export default function Notes() {
                     <div className="fixed inset-0 bg-zinc-100 bg-opacity-5 flex items-center justify-center">
                         <div className="bg-amber-50 p-6 rounded-lg shadow-lg max-w-md w-full relative">
                             <button
-                                onClick={() => { setEditMode(false); setSelectedNote(null); }}
+                                onClick={() => onExit()}
                                 className="absolute top-2 right-5 text-zinc-500 hover:text-zinc-600 text-1xl font-extrabold"
                             >
                                 X
