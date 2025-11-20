@@ -9,5 +9,4 @@ const router = Router();
     router.put('/:id', updateNoteController);
     router.delete('/:id', deleteNoteController);
 
-
 export default router;
