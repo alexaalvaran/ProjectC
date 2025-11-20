@@ -8,12 +8,14 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import notesRoutes from "./api/notes/notes.routes";
+import restosRoutes from "./api/restos/restos.routes";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/notes', notesRoutes);
+app.use('/api/restos', restosRoutes);
 
 const PORT = process.env.PORT || 4000;
 

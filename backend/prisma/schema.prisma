@@ -15,3 +15,12 @@ model Note {
   description String
   createdAt DateTime @default(now())
 }
+
+model Resto {
+  id Int @id @default(autoincrement())
+  name String
+  location String
+  cuisine String
+  description String
+  createdAt DateTime @default(now())
+}
