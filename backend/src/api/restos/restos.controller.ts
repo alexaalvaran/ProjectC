@@ -3,11 +3,11 @@ import { createResto, getRestos, getRestoById, updateResto, deleteResto } from '
 
 export const createRestoController = async (req: Request, res: Response) => {
     try {
-        const { name, location, cuisine, description } = req.body;
+        const { name, location, rating, cuisine, description } = req.body;
         if (!name) {
             return res.status(400).json({ message: 'Name is required' });
         }
-        const resto = await createResto(name, location, cuisine, description);
+        const resto = await createResto(name, location, rating, cuisine, description);
         return res.status(201).json(resto);
     } catch (err) {
         console.error(err);
@@ -48,8 +48,8 @@ export const updateRestoController = async (req: Request, res: Response) => {
         if (isNaN(id)) {
             return res.status(400).json({ message: 'Invalid restaurant ID' });
         }
-        const { name, location, cuisine, description } = req.body;
-        const resto = await updateResto(id, name, location, cuisine, description);
+        const { name, location, rating, cuisine, description } = req.body;
+        const resto = await updateResto(id, name, location, rating, cuisine, description);
         return res.status(200).json(resto);
     } catch (err) {
         console.error(err);

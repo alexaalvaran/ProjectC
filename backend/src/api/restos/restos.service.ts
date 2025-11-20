@@ -2,9 +2,9 @@ import { PrismaClient } from '../../generated/prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createResto = async (name: string, location: string, cuisine: string, description: string) => {
+export const createResto = async (name: string, location: string, rating:number, cuisine: string, description: string) => {
     return prisma.resto.create({
-        data: { name, location, cuisine, description },
+        data: { name, location, rating, cuisine, description },
     });
 };
 
@@ -18,10 +18,10 @@ export const getRestoById = async (id: number) => {
     });
 };
 
-export const updateResto = async (id: number, name: string, location: string, cuisine: string, description: string) => {
+export const updateResto = async (id: number, name: string, location: string, rating:number, cuisine: string, description: string) => {
     return prisma.resto.update({
         where: { id },
-        data: { name, location, cuisine, description },
+        data: { name, location, rating, cuisine, description },
     });
 };
 

@@ -19,6 +19,7 @@ model Note {
 model Resto {
   id Int @id @default(autoincrement())
   name String
+  rating Float
   location String
   cuisine String
   description String

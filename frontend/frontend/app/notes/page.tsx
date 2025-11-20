@@ -65,7 +65,7 @@ export default function Notes() {
         setFormTitle(note.title);
         setFormDescription(note.description);
         setSelectedNote(note);
-    }
+    };
 
     const deleteNoteClick = async (id: number) => {
         await deleteNote(id);
@@ -73,7 +73,8 @@ export default function Notes() {
 
         const data = await getNotes();
         setNotes(data);
-    } 
+    };
+
     return (
         <div className="flex min-h-screen font-mono-roboto font-bold bg-amber-50">
             <main className="flex w-full flex-col items-center justify-center py-10 px-10 gap-5">
