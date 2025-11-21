@@ -8,3 +8,28 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Note {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  createdAt DateTime @default(now())
+}
+
+model Resto {
+  id Int @id @default(autoincrement())
+  name String
+  rating Float
+  location String
+  cuisine String
+  description String
+  createdAt DateTime @default(now())
+}
+
+model Date {
+  id Int @id @default(autoincrement())
+  name String
+  location String
+  description String
+  createdAt DateTime @default(now())
+}
