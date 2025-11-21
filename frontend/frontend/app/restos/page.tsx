@@ -8,7 +8,6 @@ import RestoCard from '../../components/restoCard';
 
 export default function Restos() {
 
-
     const router = useRouter();
 
     const [restos, setRestos] = React.useState<Resto[]>([]);
