@@ -60,7 +60,7 @@ export default function Notes() {
 
     const editNoteClick = async (note: Note) => {
         setEditMode(true);
-        selectedNote && setSelectedNote(null);
+        setSelectedNote(note);
 
         setFormTitle(note.title);
         setFormDescription(note.description);
