@@ -1,6 +1,6 @@
 import { Date } from '../types/date';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000';
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const getDates = async (): Promise<Date[]> => {
     const response = await fetch(`${BACKEND_URL}/api/dates`);
