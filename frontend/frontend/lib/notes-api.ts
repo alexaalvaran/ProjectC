@@ -1,6 +1,6 @@
 import { Note } from '../types/note';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000';
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const getNotes = async (): Promise<Note[]> => {
     const response = await fetch(`${BACKEND_URL}/api/notes`);
